@@ -16,7 +16,8 @@ Construa uma comando SELECT que retorne dados equivalentes a este XPath
 
 ### Resolução
 ~~~xquery
-(escreva aqui a resolução em XPath)
+SELECT nome FROM INDIVIDUO I
+WHERE I.idade > 20;
 ~~~
 
 ## Questão 2
@@ -31,7 +32,9 @@ return {data($i/@nome)}
 ~~~
 ### Resolução
 ~~~xquery
-(escreva aqui a resolução em XQuery)
+let $fichariodoc := doc('http://www.ic.unicamp.br/~santanch/teaching/db/xml/fichario.xml')
+
+return $fichariodoc//individuo[nome="@nome"]
 ~~~
 
 ## Questão 3
@@ -46,7 +49,8 @@ return {data($i/@nome)}
 
 ### Resolução
 ~~~sql
-(escreva aqui a resolução em SQL)
+SELECT individuo FROM fichariodo
+WHERE nome=nome
 ~~~
 
 ## Questão 4
@@ -54,7 +58,11 @@ Retorne quantas publicações são posteriores ao ano de 2011.
 
 ### Resolução
 ~~~xquery
-(escreva aqui a resolução em XQuery)
+let $fichariodoc := doc('http://www.ic.unicamp.br/~santanch/teaching/db/xml/fichario.xml')
+
+for @@3@@fichariodoc//individuo)
+where @@4@@i/@idade
+return <maior>{data($i/@idade)}</maior>
 ~~~
 
 ## Questão 5
